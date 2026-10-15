@@ -46,6 +46,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('BolaBola'),
+        backgroundColor: Colors.black.withOpacity(0.5),
+        elevation: 0,
         actions: [
           IconButton(
             icon: Icon(
@@ -57,84 +59,92 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ),
         ],
       ),
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 500),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    ClipRRect(
+      extendBodyBehindAppBar: true,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AppAssets.zidaneBackground),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.black.withOpacity(0.4),
+                Colors.black.withOpacity(0.75),
+              ],
+            ),
+          ),
+          child: SafeArea(
+            child: Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 480),
+                  child: Card(
+                    color: (themeProvider.isDarkMode ? const Color(0xFF1E2630) : Colors.white).withOpacity(0.92),
+                    elevation: 8,
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(
-                        AppAssets.logo,
-                        height: 120,
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Container(
-                            height: 120,
-                            decoration: BoxDecoration(
-                              color: theme.colorScheme.primary.withOpacity(0.1),
-                              shape: BoxShape.circle,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Form(
+                        key: _formKey,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                              'Uji Ball Knowledge Mu!',
+                              style: theme.textTheme.headlineSmall?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: theme.colorScheme.onSurface,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                            child: Icon(
-                              Icons.sports_soccer,
-                              size: 80,
-                              color: theme.colorScheme.primary,
+                            const SizedBox(height: 8),
+                            Text(
+                              'Masukkan nama mu untuk memulai kuis',
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                color: theme.colorScheme.onSurface.withOpacity(0.7),
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                          );
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 24),
-                    Text(
-                      'Uji Pengetahuan Sepak Bola Kamu!',
-                      style: theme.textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: theme.colorScheme.onSurface,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Masukkan nama kamu untuk memulai kuis trivia sepak bola',
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurface.withOpacity(0.7),
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 32),
-                    TextFormField(
-                      controller: _nameController,
-                      decoration: InputDecoration(
-                        labelText: 'Nama Lengkap / Panggilan',
-                        hintText: 'Contoh: Lionel Budi',
-                        prefixIcon: const Icon(Icons.person),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
+                            const SizedBox(height: 28),
+                            TextFormField(
+                              controller: _nameController,
+                              decoration: InputDecoration(
+                                labelText: 'Nama',
+                                hintText: 'Contoh: Leonaldo jr',
+                                prefixIcon: const Icon(Icons.person),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                filled: true,
+                                fillColor: theme.colorScheme.surface,
+                              ),
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'Silakan masukkan nama mu dulu';
+                                }
+                                return null;
+                              },
+                            ),
+                            const SizedBox(height: 24),
+                            CustomButton(
+                              text: 'Mulai Tes😈?',
+                              icon: Icons.play_arrow,
+                              onPressed: _startQuiz,
+                            ),
+                          ],
                         ),
-                        filled: true,
-                        fillColor: theme.cardTheme.color,
                       ),
-                      validator: (value) {
-                        if (value == null || value.trim().isEmpty) {
-                          return 'Silakan masukkan nama terlebih dahulu';
-                        }
-                        return null;
-                      },
                     ),
-                    const SizedBox(height: 24),
-                    CustomButton(
-                      text: 'Mulai Kuis',
-                      icon: Icons.play_arrow,
-                      onPressed: _startQuiz,
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),

@@ -4,4 +4,5 @@ class AppAssets {
   static const String logo = 'assets/images/logo.png';
   static const String stadiumBanner = 'assets/images/stadium.png';
   static const String trophy = 'assets/images/trophy.png';
+  static const String zidaneBackground = 'assets/images/zidane.jpg';
 }
