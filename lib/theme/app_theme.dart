@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../constants/app_assets.dart';
 
 class AppTheme {
   static const Color primaryColor = Color(0xFF1B5E20);
@@ -8,6 +9,7 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
+    fontFamily: AppAssets.fontFamily,
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryColor,
       brightness: Brightness.light,
@@ -45,6 +47,7 @@ class AppTheme {
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
+    fontFamily: AppAssets.fontFamily,
     colorScheme: ColorScheme.fromSeed(
       seedColor: accentColor,
       brightness: Brightness.dark,

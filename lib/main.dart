@@ -22,7 +22,7 @@ class BolaBolaApp extends StatelessWidget {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return MaterialApp(
-      title: 'BolaBola - Kuis Sepak Bola',
+      title: 'BolaBola',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
@@ -41,7 +41,7 @@ class TestHomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BolaBola - Kuis Sepak Bola'),
+        title: const Text('BolaBola'),
         actions: [
           IconButton(
             icon: Icon(
@@ -66,7 +66,7 @@ class TestHomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                'Selamat Datang di BolaBola!',
+                'BolaBola Quiz',
                 style: Theme.of(context).textTheme.headlineSmall,
                 textAlign: TextAlign.center,
               ),
@@ -77,7 +77,7 @@ class TestHomeScreen extends StatelessWidget {
                 },
                 icon: const Icon(Icons.color_lens),
                 label: Text(
-                  themeProvider.isDarkMode ? 'Beralih ke Light Mode' : 'Beralih ke Dark Mode',
+                  themeProvider.isDarkMode ? 'Light Mode' : 'Dark Mode',
                 ),
               ),
             ],
