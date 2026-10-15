@@ -75,6 +75,7 @@ class OptionCard extends StatelessWidget {
                         ? Image.asset(
                             option.imagePath!,
                             fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
                             width: double.infinity,
                             errorBuilder: (context, error, stackTrace) {
                               return Container(

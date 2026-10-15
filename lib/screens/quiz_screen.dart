@@ -82,48 +82,48 @@ class QuizScreen extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 16),
-                            SizedBox(
-                              height: isLandscape ? 260 : 320,
-                              child: GridView.builder(
-                                physics: const NeverScrollableScrollPhysics(),
-                                itemCount: currentQuestion.options.length,
-                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  childAspectRatio: isLandscape ? 1.6 : 1.1,
-                                  crossAxisSpacing: 12,
-                                  mainAxisSpacing: 12,
-                                ),
-                                itemBuilder: (context, index) {
-                                  final option = currentQuestion.options[index];
-                                  final isSelected = currentAnswer == index;
-                                  final isCorrect = index == currentQuestion.correctOptionIndex;
-
-                                  return OptionCard(
-                                    option: option,
-                                    isSelected: isSelected,
-                                    isAnswerSubmitted: isAnswerSubmitted,
-                                    isCorrect: isCorrect,
-                                    onTap: () {
-                                      quizProvider.selectOption(index);
-                                    },
-                                  );
-                                },
+                            GridView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: currentQuestion.options.length,
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                childAspectRatio: isLandscape ? 1.5 : 1.05,
+                                crossAxisSpacing: 12,
+                                mainAxisSpacing: 12,
                               ),
+                              itemBuilder: (context, index) {
+                                final option = currentQuestion.options[index];
+                                final isSelected = currentAnswer == index;
+                                final isCorrect = index == currentQuestion.correctOptionIndex;
+
+                                return OptionCard(
+                                  option: option,
+                                  isSelected: isSelected,
+                                  isAnswerSubmitted: isAnswerSubmitted,
+                                  isCorrect: isCorrect,
+                                  onTap: () {
+                                    quizProvider.selectOption(index);
+                                  },
+                                );
+                              },
                             ),
                             if (isAnswerSubmitted) ...[
-                              const SizedBox(height: 12),
+                              const SizedBox(height: 16),
                               Container(
-                                padding: const EdgeInsets.all(12),
+                                padding: const EdgeInsets.all(14),
                                 decoration: BoxDecoration(
                                   color: theme.colorScheme.primary.withOpacity(0.08),
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(14),
                                   border: Border.all(
                                     color: theme.colorScheme.primary.withOpacity(0.2),
                                   ),
                                 ),
                                 child: Text(
                                   currentQuestion.explanation,
-                                  style: theme.textTheme.bodyMedium,
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                    height: 1.4,
+                                  ),
                                   textAlign: TextAlign.center,
                                 ),
                               ),
