@@ -46,7 +46,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('BolaBola'),
-        backgroundColor: Colors.black.withOpacity(0.5),
+        backgroundColor: themeProvider.isDarkMode
+            ? Colors.black.withOpacity(0.4)
+            : Colors.white.withOpacity(0.65),
+        foregroundColor: themeProvider.isDarkMode ? Colors.white : Colors.black87,
         elevation: 0,
         actions: [
           IconButton(
@@ -72,10 +75,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [
-                Colors.black.withOpacity(0.4),
-                Colors.black.withOpacity(0.75),
-              ],
+              colors: themeProvider.isDarkMode
+                  ? [
+                      Colors.black.withOpacity(0.4),
+                      Colors.black.withOpacity(0.75),
+                    ]
+                  : [
+                      Colors.black.withOpacity(0.2),
+                      Colors.black.withOpacity(0.55),
+                    ],
             ),
           ),
           child: SafeArea(
@@ -85,7 +93,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 480),
                   child: Card(
-                    color: (themeProvider.isDarkMode ? const Color(0xFF1E2630) : Colors.white).withOpacity(0.92),
+                    color: (themeProvider.isDarkMode
+                            ? const Color(0xFF1E2630)
+                            : Colors.white)
+                        .withOpacity(0.78),
                     elevation: 8,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -125,7 +136,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                   borderRadius: BorderRadius.circular(14),
                                 ),
                                 filled: true,
-                                fillColor: theme.colorScheme.surface,
+                                fillColor: theme.colorScheme.surface.withOpacity(0.9),
                               ),
                               validator: (value) {
                                 if (value == null || value.trim().isEmpty) {
