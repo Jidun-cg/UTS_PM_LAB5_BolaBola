@@ -147,7 +147,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             ),
                             const SizedBox(height: 24),
                             CustomButton(
-                              text: 'Mulai Tes😈?',
+                              text: 'Mulai Tes?',
                               icon: Icons.play_arrow,
                               onPressed: _startQuiz,
                             ),

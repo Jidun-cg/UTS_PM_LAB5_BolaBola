@@ -13,7 +13,7 @@ class ScoreScreen extends StatelessWidget {
 
   String _getFeedbackMessage(double percentage) {
     if (percentage >= 80) {
-      return 'Luar Biasa! Kamu Adalah Juara Dunia Sepak Bola! 🏆';
+      return 'Amazing! Kamu Adalah Juara Dunia Sepak Bola! 🏆';
     } else if (percentage >= 60) {
       return 'Hebat! Pengetahuan Sepak Bola Kamu Sangat Baik! ⚽';
     } else {
