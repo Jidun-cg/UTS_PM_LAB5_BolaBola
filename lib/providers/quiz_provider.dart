@@ -4,7 +4,7 @@ import '../models/question.dart';
 
 class QuizProvider extends ChangeNotifier {
   String _userName = '';
-  final List<Question> _questions = QuizData.sampleQuestions;
+  List<Question> _questions = QuizData.sampleQuestions;
   int _currentQuestionIndex = 0;
   List<int?> _userAnswers = List.filled(QuizData.sampleQuestions.length, null);
   bool _isAnswerSubmitted = false;
@@ -68,6 +68,7 @@ class QuizProvider extends ChangeNotifier {
   }
 
   void restartQuiz() {
+    _questions = QuizData.sampleQuestions;
     _currentQuestionIndex = 0;
     _userAnswers = List.filled(_questions.length, null);
     _isAnswerSubmitted = false;
