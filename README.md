@@ -1,34 +1,58 @@
-# uts
+# ⚽ BolaBola
 
-A new Flutter project.
+---
 
-## Getting Started
+* **Nama**: M ZIDAN RURIANO AG
+* **NIM**: 241401063
+* **Lab**: 5
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Informasi Aplikasi
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+### 1. Nama Aplikasi
+**BolaBola**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 2. Deskripsi Singkat
+**BolaBola** adalah aplikasi kuis trivia sepak bola berbasis flutter yang menguji pengetahuan sepak bola pengguna melalui kuis.
 
-Sumber
-gettyimages.com
-By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=195644440
-By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=195518244
-By Bryan Berlin, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=196249374
-By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=195303696
-By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=194950984
-By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=194374448
-By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=195645260
-By Austin Osuide - Cropped version of the file uploaded to Flickr with the name rooooonie, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=1583061
-By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=194284379
-By Bryan Berlin - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=193728767
-By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=195780204
-By DSanchez17 from St Albans, England - This file was derived from: Toni Kroos - CdR - RM v ATL.jpg:Copa del Rey - Real Madrid vs Atlético Madrid, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=41865593
-By Дмитрий Голубович - https://www.soccer0010.com/galery/1013448/photo/673353, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=62794966
-By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=194375994
+### 3. Fitur-Fitur Utama
+**Beranda Input Nama**: Pengguna dapat memasukkan nama sebelum memulai kuis dengan sistem validasi form.  
+**Kuis Gambar Grid 2x2**: Tampilan 4 pilihan jawaban bergambar pemain sepak bola secara rapi dan proporsional.  
+**Feedback Jawaban Seketika**: Indikator warna hijau (benar) dan merah (salah) secara otomatis setelah memilih jawaban.  
+**Penjelasan Fakta Sepak Bola**: Box pembahasan fakta sejarah sepak bola muncul otomatis setelah menjawab pertanyaan.  
+**Kalkulasi Skor & Evaluasi Dinamis**: Halaman hasil menampilkan skor total, persentase, serta ucapan selamat dinamis berdasarkan pencapaian skor.  
+**State Management Anti-Reset (Provider)**: Progres kuis dan jawaban tidak akan hilang atau ter-reset saat layar dirotasi.  
+**Dual-Theme (Light & Dark Mode)**: Pengguna dapat beralih antara Light Mode dan Dark Mode secara reaktif melalui AppBar.  
+**Desain Responsif & Adaptif**: Menggunakan `ConstrainedBox`, `SingleChildScrollView`, dan `OrientationBuilder` sehingga mendukung layar HP (Portrait/Landscape), Tablet, dan Browser Web.
+
+---
+
+## 📸 Dokumentasi
+
+### 1. Screenshot Tampilan Aplikasi
+
+| Halaman Beranda | Halaman Kuis | Halaman Hasil Skor |
+| :---: | :---: | :---: |
+| ![Beranda](assets/images/welcome_screen.png) | ![Kuis](assets/images/quiz_screen.png) | ![Skor](assets/images/score_screen.png) |
+
+---
+
+### 2. Link Mockup / Prototype
+* 🎨 **Figma Prototype**: https://www.figma.com/design/LUN5WdBKTTq1xwcYJcBA5O/BolaBola?node-id=0-1&t=wTvwMVNms67B9ghU-1
+
+---
+
+### 3. Credit Sumber Aset
+
+#### Custom Font
+* **Poppins Font**: [Google Fonts - Poppins](https://fonts.google.com/specimen/Poppins) (OFL License)
+
+#### Lisensi Gambar Pemain & Aset
+* **Getty Images**: [gettyimages.com](https://www.gettyimages.com/)
+* **Wikimedia Commons**:
+  * Harry Kane, Lionel Messi, Cristiano Ronaldo, Rodri, Ousmane Dembele: By Bryan Berlin / WikiPortraits, CC BY-SA 4.0, [Link 1](https://commons.wikimedia.org/w/index.php?curid=195644440), [Link 2](https://commons.wikimedia.org/w/index.php?curid=195518244), [Link 3](https://commons.wikimedia.org/w/index.php?curid=196249374), [Link 4](https://commons.wikimedia.org/w/index.php?curid=195303696), [Link 5](https://commons.wikimedia.org/w/index.php?curid=194950984)
+  * Wayne Rooney: By Austin Osuide, CC BY 2.0, [Link Rooney](https://commons.wikimedia.org/w/index.php?curid=1583061)
+  * Toni Kroos: By DSanchez17, CC BY 3.0, [Link Kroos](https://commons.wikimedia.org/w/index.php?curid=41865593)
+  * Luka Modric: By Дмитрий Голубович, CC BY-SA 3.0, [Link Modric](https://commons.wikimedia.org/w/index.php?curid=62794966)
+  * Pemain Lainnya: Bryan Berlin / WikiPortraits, CC BY-SA 4.0, [Link Commons](https://commons.wikimedia.org/)
